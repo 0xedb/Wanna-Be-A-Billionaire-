@@ -1,0 +1,19 @@
+#dob {
+	-fx-background-color: B1D6FF;
+	-fx-base: #489EFC;
+	-fx-control-inner-background: B1D6FF;
+}
+
+.sex {
+	-fx-body-color: #489EFC33;
+	-fx-outer-body: #489EFC;
+	-fx-pressed-base: #0AED91;
+	-fx-mark-color: lime;
+}
+
+.response_cancel {
+	-fx-text-fill: #FFFFFF;
+	-fx-background-color: E8001A99;
+	-fx-font-family: Times;
+	-fx-font-weight: bold;
+}
