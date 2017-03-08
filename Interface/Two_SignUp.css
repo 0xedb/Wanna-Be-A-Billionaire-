@@ -17,3 +17,13 @@
 	-fx-font-family: Times;
 	-fx-font-weight: bold;
 }
+
+.response_submit {
+	-fx-background-color: 
+		rgba(147,206,222,1);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 08;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
