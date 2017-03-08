@@ -48,7 +48,15 @@ public class One_LandingPageController implements Initializable {
     }    
 
     @FXML
-    private void userLogin(ActionEvent event) {
+    private void userLogin(ActionEvent event) throws IOException {
+        //validate user input
+        //save necessary info on user
+        Parent questionPage = FXMLLoader.load(getClass().getResource("Threee_QuestionText.fxml"));
+        Scene three = new Scene(questionPage);
+        Stage quest = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        quest.setScene(three);
+        quest.setTitle("Game on!");
+        quest.show();
     }
 
     @FXML
