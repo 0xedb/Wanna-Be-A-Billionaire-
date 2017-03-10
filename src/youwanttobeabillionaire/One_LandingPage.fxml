@@ -18,7 +18,7 @@
          <children>
             <Pane layoutX="53.0" layoutY="194.0" prefHeight="152.0" prefWidth="280.0" style="-fx-background-color: #8DBEF399; -fx-background-radius: 08;">
                <children>
-                  <TextField fx:id="oneName" focusTraversable="false" layoutX="33.0" layoutY="29.0" prefHeight="28.0" prefWidth="215.0" promptText="Name" style="-fx-background-radius: 06; -fx-background-color: B1D6FFE6;" styleClass="login_form" stylesheets="@One_LandingPage.css">
+                  <TextField fx:id="oneName" focusTraversable="false" layoutX="33.0" layoutY="29.0" prefHeight="28.0" prefWidth="215.0" promptText="Username" style="-fx-background-radius: 06; -fx-background-color: B1D6FFE6;" styleClass="login_form" stylesheets="@One_LandingPage.css">
                      <font>
                         <Font name="Monospaced Bold" size="14.0" />
                      </font></TextField>

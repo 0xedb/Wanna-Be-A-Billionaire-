@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
@@ -33,6 +36,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -71,8 +75,7 @@ public class One_LandingPageController implements Initializable {
     }    
 
     @FXML
-    private void userLogin(ActionEvent event) throws IOException, SQLException {
-        //validate user input
+    private void userLogin(ActionEvent event) throws IOException, SQLException, InterruptedException {
         String name, password;
         name = oneName.getText();
         password = onePassword.getText();
@@ -87,6 +90,7 @@ public class One_LandingPageController implements Initializable {
             if (output.next()) {
                 if (output.getString("user").equals(name)) {      
                     System.out.println("Yesss");
+                    popup();
                     Parent questionPage = FXMLLoader.load(getClass().getResource("Threee_QuestionText.fxml"));
                     Scene three = new Scene(questionPage);
                     Stage quest = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -97,6 +101,7 @@ public class One_LandingPageController implements Initializable {
                 
                 } else {
                     loginWarn.setText("*Login Credentials incorrect*");
+                    onePassword.clear();
             }
         }catch (SQLException ex) {
             loginWarn.setText("*You did something very terrible*");
@@ -139,20 +144,7 @@ public class One_LandingPageController implements Initializable {
             System.out.println("something went wrong");
             oneScreen.setOpacity(1);
         }
-            
-        
-        
-        
-        
-
-        }
-        
-        
-        
-        
-        
-        
-    
+    }
 
     @FXML
     private void userSingup(ActionEvent event) throws IOException {
@@ -162,6 +154,26 @@ public class One_LandingPageController implements Initializable {
         primaryStage.setScene(one);
         primaryStage.setTitle("Sign-Up Here");
         primaryStage.show();
+    }
+    
+    public void popup() throws InterruptedException {
+        oneScreen.setOpacity(0.70);
+        onePassword.clear();
+        oneName.clear();
+        loginWarn.setText("");
+        Alert confirm = new Alert(AlertType.INFORMATION);
+        confirm.setTitle("Admin LogIn");
+        confirm.setHeaderText("Ready? The Game Is About To Begin");
+        confirm.setContentText("The game begins right after your confirmation");
+        confirm.showAndWait();
+        PauseTransition pTrans = new PauseTransition(Duration.seconds(20));
+        pTrans.setOnFinished((ActionEvent e) -> {
+            //paused for sometime
+        });
+        pTrans.play();
+        
+        
+        
     }
     
 }
