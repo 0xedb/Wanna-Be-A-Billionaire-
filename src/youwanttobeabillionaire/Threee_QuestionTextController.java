@@ -5,15 +5,23 @@
  */
 package youwanttobeabillionaire;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -21,7 +29,9 @@ import javafx.scene.control.ToggleGroup;
  * @author bruno
  */
 public class Threee_QuestionTextController implements Initializable {
-
+    
+    private static int questionNo = 1;
+    
     @FXML
     private Button threeWalkAway;
     @FXML
@@ -46,7 +56,11 @@ public class Threee_QuestionTextController implements Initializable {
     private Label threeQuestion;
     @FXML
     private Label threeTime;
-
+    @FXML
+    private Label threeQuestionNumber;
+    @FXML
+    private AnchorPane threeScreen;
+    
     /**
      * Initializes the controller class.
      */
@@ -57,10 +71,34 @@ public class Threee_QuestionTextController implements Initializable {
 
     @FXML
     private void walkAway(ActionEvent event) {
+        threeScreen.setOpacity(0.70);
+        Alert confirm = new Alert(Alert.AlertType.WARNING);
+        confirm.setTitle("Quit");
+        confirm.setHeaderText("Remember, quitters never WIN!");
+        //show how much you've got so far
+        confirm.setContentText("");
+        confirm.showAndWait();
+        
+        Parent landingPage = null;
+            threeScreen.setOpacity(1);
+            try {
+                landingPage = FXMLLoader.load(getClass().getResource("One_LandingPage.fxml"));
+                
+            } catch (IOException ex) {
+                //exception occured
+            }
+            Scene landing = new Scene(landingPage);
+            Stage land = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            land.setScene(landing);
+            land.setTitle("You Want To Be A Billionaire?!");
+            land.show();
+            threeScreen.setOpacity(1);
     }
 
     @FXML
     private void sureAnswer(ActionEvent event) {
+        threeQuestionNumber.setText(Integer.toString(questionNo++));
+        
     }
     
 }

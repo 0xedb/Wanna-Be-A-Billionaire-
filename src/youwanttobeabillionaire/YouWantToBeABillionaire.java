@@ -44,6 +44,7 @@ public class YouWantToBeABillionaire extends Application {
         
         Scene scene = new Scene(root);
         stage.setResizable(false);
+        scene.getStylesheets().add("http://fonts.googleapis.com/css?family=Sacramento");
         stage.setScene(scene);
         stage.show();
     }

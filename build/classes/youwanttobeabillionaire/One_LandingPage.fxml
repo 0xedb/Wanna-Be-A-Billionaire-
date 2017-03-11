@@ -6,6 +6,8 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -45,5 +47,15 @@
             <Label fx:id="loginWarn" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="147.0" prefHeight="47.0" prefWidth="280.0" textAlignment="CENTER" textFill="RED" />
          </children>
       </Pane>
+      <ImageView fx:id="oneImage" fitHeight="424.0" fitWidth="412.0" layoutX="75.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rect4565.png" />
+         </image>
+      </ImageView>
+      <Label id="title" fx:id="oneTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="67.0" layoutY="458.0" prefHeight="168.0" prefWidth="429.0" style="-fx-font-family: Sacramento; -fx-font-size: 33; -fx-font-weight: bold;" text="You Want To Be A Billionaire?" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

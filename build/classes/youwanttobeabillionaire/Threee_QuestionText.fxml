@@ -12,20 +12,15 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="948.0" style="-fx-background-color: #355672; -fx-background-radius: 05;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="youwanttobeabillionaire.Threee_QuestionTextController">
+<AnchorPane fx:id="threeScreen" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="948.0" style="-fx-background-color: #355672; -fx-background-radius: 05;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="youwanttobeabillionaire.Threee_QuestionTextController">
    <children>
       <Pane layoutY="-19.0" prefHeight="693.0" prefWidth="215.0" style="-fx-background-color: #0D1926;">
          <children>
             <Button fx:id="threeWalkAway" layoutX="52.0" layoutY="581.0" mnemonicParsing="false" onAction="#walkAway" prefHeight="35.0" prefWidth="111.0" style="-fx-background-radius: 08; -fx-background-color: #E8001A; -fx-font-family: monospace; -fx-font-weight: bold;" text="Walk Away" textFill="WHITE" />
             <Button fx:id="threeSure" layoutX="52.0" layoutY="521.0" mnemonicParsing="false" onAction="#sureAnswer" prefHeight="35.0" prefWidth="111.0" style="-fx-background-radius: 08; -fx-background-color: #A5BA2F; -fx-font-family: monospace; -fx-font-weight: bold;" text="Sure!" textFill="WHITE" />
-            <Pane layoutX="18.0" layoutY="43.0" prefHeight="129.0" prefWidth="180.0" style="-fx-background-radius: 12; -fx-background-color: #0D192666;">
+            <Pane layoutX="18.0" layoutY="43.0" prefHeight="89.0" prefWidth="180.0" style="-fx-background-radius: 12; -fx-background-color: #0D192666;">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="32.0" prefHeight="25.0" prefWidth="164.0" style="-fx-font-weight: bold; -fx-font-size: 30;" text="Question " textAlignment="CENTER" textFill="#fffefe" wrapText="true">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="threeQuestionNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="73.0" style="-fx-font-weight: bold; -fx-font-size: 30; -fx-text-alignment: CENTER;" textAlignment="CENTER" textFill="#fffefe" wrapText="true">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -40,6 +35,11 @@
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="331.0" prefHeight="16.0" prefWidth="85.0" text="Eliminate" textAlignment="CENTER" textFill="WHITE" />
             <Button fx:id="threeAskAudience" layoutX="38.0" layoutY="370.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="41.0" style="-fx-background-radius: 08; -fx-background-color: #FFFC;" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="380.0" text="Ask Audience" textAlignment="CENTER" textFill="WHITE" />
+            <Label fx:id="threeQuestionNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="122.0" style="-fx-font-weight: bold; -fx-font-size: 30; -fx-text-alignment: CENTER;" text="1" textAlignment="CENTER" textFill="#fffefe" wrapText="true">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane layoutX="218.0" layoutY="430.0" prefHeight="246.0" prefWidth="734.0" style="-fx-background-color: #1082FE80;">

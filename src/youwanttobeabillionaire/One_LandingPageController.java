@@ -33,6 +33,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -63,6 +64,10 @@ public class One_LandingPageController implements Initializable {
     private AnchorPane oneScreen;
     @FXML
     private Label loginWarn;
+    @FXML
+    private ImageView oneImage;
+    @FXML
+    private Label oneTitle;
     
     
     
@@ -171,9 +176,6 @@ public class One_LandingPageController implements Initializable {
             //paused for sometime
         });
         pTrans.play();
-        
-        
-        
     }
     
 }

@@ -197,7 +197,7 @@ public class Two_SignUpController implements Initializable {
     }
 
     @FXML
-    private void cancelToLandingPage(ActionEvent event) throws IOException {
+    public void cancelToLandingPage(ActionEvent event) throws IOException {
         Parent landingPage = FXMLLoader.load(getClass().getResource("One_LandingPage.fxml"));
         Scene landing = new Scene(landingPage);
         Stage land = (Stage) ((Node) event.getSource()).getScene().getWindow();
