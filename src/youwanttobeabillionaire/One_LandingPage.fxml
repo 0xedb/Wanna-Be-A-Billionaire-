@@ -52,7 +52,7 @@
             <Image url="@rect4565.png" />
          </image>
       </ImageView>
-      <Label id="title" fx:id="oneTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="67.0" layoutY="458.0" prefHeight="168.0" prefWidth="429.0" style="-fx-font-family: Sacramento; -fx-font-size: 33; -fx-font-weight: bold;" text="You Want To Be A Billionaire?" textFill="WHITE" wrapText="true">
+      <Label id="title" fx:id="oneTitle" alignment="CENTER" contentDisplay="CENTER" layoutY="458.0" prefHeight="168.0" prefWidth="565.0" style="-fx-font-family: Sacramento; -fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: #FFC109;" text="You Want To Be A Billionaire?" textFill="WHITE" wrapText="true">
          <font>
             <Font size="27.0" />
          </font>
