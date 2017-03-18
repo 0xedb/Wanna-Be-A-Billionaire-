@@ -100,5 +100,17 @@ public class Threee_QuestionTextController implements Initializable {
         threeQuestionNumber.setText(Integer.toString(questionNo++));
         
     }
+
+    @FXML
+    private void phoneFriend(ActionEvent event) {
+    }
+
+    @FXML
+    private void eliminate(ActionEvent event) {
+    }
+
+    @FXML
+    private void askAudience(ActionEvent event) {
+    }
     
 }

@@ -5,7 +5,6 @@
  */
 package youwanttobeabillionaire;
 
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -44,12 +43,11 @@ import javafx.util.Duration;
  *
  * @author bruno
  */
-
 public class One_LandingPageController implements Initializable {
-    
+
     private Statement sqlQuery;
     private Connection dataConnection;
-    
+
     @FXML
     private TextField oneName;
     @FXML
@@ -68,33 +66,29 @@ public class One_LandingPageController implements Initializable {
     private ImageView oneImage;
     @FXML
     private Label oneTitle;
-    
-    
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void userLogin(ActionEvent event) throws IOException, SQLException, InterruptedException {
         String name, password;
         name = oneName.getText();
         password = onePassword.getText();
-        
-        
+
         try {
             dataConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ywtbab", "root", "root");
             sqlQuery = dataConnection.createStatement();
-            
-            ResultSet output = sqlQuery.executeQuery("SELECT user, password FROM user_info WHERE (user =" +
-                                                    "'" + name + "'" + " AND password='" + password + "')");
+
+            ResultSet output = sqlQuery.executeQuery("SELECT user, password FROM user_info WHERE (user ="
+                    + "'" + name + "'" + " AND password='" + password + "')");
             if (output.next()) {
-                if (output.getString("user").equals(name)) {      
-                    System.out.println("Yesss");
+                if (output.getString("user").equals(name)) {
                     popup();
                     Parent questionPage = FXMLLoader.load(getClass().getResource("Threee_QuestionText.fxml"));
                     Scene three = new Scene(questionPage);
@@ -102,16 +96,16 @@ public class One_LandingPageController implements Initializable {
                     quest.setScene(three);
                     quest.setTitle("Game on!");
                     quest.show();
-                } 
-                
-                } else {
-                    loginWarn.setText("*Login Credentials incorrect*");
-                    onePassword.clear();
+                }
+
+            } else {
+                loginWarn.setText("*Login Credentials incorrect*");
+                onePassword.clear();
             }
-        }catch (SQLException ex) {
-            loginWarn.setText("*You did something very terrible*");
+        } catch (SQLException ex) {
+            loginWarn.setText("*Check the database!*");
         }
-        
+
     }
 
     @FXML
@@ -123,29 +117,27 @@ public class One_LandingPageController implements Initializable {
         Dialog<String> adminOpen = new Dialog<>();
         adminOpen.setTitle("Admin LogIn");
         adminOpen.setHeaderText("Enter the ADMIN password to open the admin panel");
-        
+
         PasswordField pswd = new PasswordField();
         pswd.setPromptText("        *Password*");
         pswd.setText("");
-        
+
         GridPane pane = new GridPane();
         pane.add(pswd, 1, 1);
         pane.setAlignment(Pos.CENTER);
         adminOpen.getDialogPane().setContent(pane);
         pane.setStyle("-fx-background-color:  #B1D6FFE6;");
-        
+
         ButtonType btnLogin = new ButtonType("LogIn", ButtonData.OK_DONE);
         ButtonType btnCancel = new ButtonType("Cancel");
         adminOpen.getDialogPane().getButtonTypes().addAll(btnCancel, btnLogin);
-        
-        
+
         @SuppressWarnings("unchecked")
         Optional<String> result = adminOpen.showAndWait();
         if (!"".equals(pswd.getText()) && result.isPresent()) {
             System.out.println(pswd.getText());
             oneScreen.setOpacity(1);
-        }
-        else {
+        } else {
             System.out.println("something went wrong");
             oneScreen.setOpacity(1);
         }
@@ -160,9 +152,9 @@ public class One_LandingPageController implements Initializable {
         primaryStage.setTitle("Sign-Up Here");
         primaryStage.show();
     }
-    
+
     public void popup() throws InterruptedException {
-        oneScreen.setOpacity(0.70);
+        oneScreen.setOpacity(0.30);
         onePassword.clear();
         oneName.clear();
         loginWarn.setText("");
@@ -177,5 +169,5 @@ public class One_LandingPageController implements Initializable {
         });
         pTrans.play();
     }
-    
+
 }

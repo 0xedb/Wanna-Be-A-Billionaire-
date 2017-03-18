@@ -20,11 +20,11 @@
          <children>
             <Pane layoutX="53.0" layoutY="194.0" prefHeight="152.0" prefWidth="280.0" style="-fx-background-color: #8DBEF399; -fx-background-radius: 08;">
                <children>
-                  <TextField fx:id="oneName" focusTraversable="false" layoutX="33.0" layoutY="29.0" prefHeight="28.0" prefWidth="215.0" promptText="Username" style="-fx-background-radius: 06; -fx-background-color: B1D6FFE6;" styleClass="login_form" stylesheets="@One_LandingPage.css">
+                  <TextField fx:id="oneName" focusTraversable="false" layoutX="33.0" layoutY="22.0" prefHeight="35.0" prefWidth="215.0" promptText="Username" style="-fx-background-radius: 06; -fx-background-color: B1D6FFE6;" styleClass="login_form" stylesheets="@One_LandingPage.css">
                      <font>
                         <Font name="Monospaced Bold" size="14.0" />
                      </font></TextField>
-                  <PasswordField fx:id="onePassword" focusTraversable="false" layoutX="33.0" layoutY="94.0" prefHeight="28.0" prefWidth="215.0" promptText="Password" style="-fx-background-radius: 06; -fx-background-color: B1D6FFE6; -fx-prompt-text-fill: black;" styleClass="login_form" stylesheets="@One_LandingPage.css">
+                  <PasswordField fx:id="onePassword" focusTraversable="false" layoutX="33.0" layoutY="94.0" prefHeight="35.0" prefWidth="215.0" promptText="Password" style="-fx-background-radius: 06; -fx-background-color: B1D6FFE6; -fx-prompt-text-fill: black;" styleClass="login_form" stylesheets="@One_LandingPage.css">
                      <font>
                         <Font name="Monospaced Bold" size="14.0" />
                      </font></PasswordField>
@@ -47,9 +47,9 @@
             <Label fx:id="loginWarn" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="147.0" prefHeight="47.0" prefWidth="280.0" textAlignment="CENTER" textFill="RED" />
          </children>
       </Pane>
-      <ImageView fx:id="oneImage" fitHeight="424.0" fitWidth="412.0" layoutX="75.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="oneImage" fitHeight="374.0" fitWidth="439.0" layoutX="65.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@rect4565.png" />
+            <Image url="@g136.png" />
          </image>
       </ImageView>
       <Label id="title" fx:id="oneTitle" alignment="CENTER" contentDisplay="CENTER" layoutY="458.0" prefHeight="168.0" prefWidth="565.0" style="-fx-font-family: Sacramento; -fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: #FFC109;" text="You Want To Be A Billionaire?" textFill="WHITE" wrapText="true">
