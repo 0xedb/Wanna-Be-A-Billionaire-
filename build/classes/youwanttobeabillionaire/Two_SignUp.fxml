@@ -11,87 +11,94 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="948.0" style="-fx-background-color: #355672;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="youwanttobeabillionaire.Two_SignUpController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="1051.0" style="-fx-background-color: #355672;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="youwanttobeabillionaire.Two_SignUpController">
    <children>
-      <Pane layoutY="-5.0" prefHeight="677.0" prefWidth="313.0" style="-fx-background-color: #0D1926;">
+      <Pane layoutY="-5.0" prefHeight="744.0" prefWidth="339.0" style="-fx-background-color: #0D1926;">
          <children>
-            <Label alignment="CENTER" layoutX="46.0" layoutY="97.0" prefHeight="96.0" prefWidth="222.0" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="59.0" layoutY="291.0" prefHeight="96.0" prefWidth="222.0" style="-fx-font-family: 'Nova Oval';" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Monospaced Bold" size="45.0" />
                </font>
             </Label>
+            <ImageView fitHeight="241.0" fitWidth="293.0" layoutX="23.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@signuppic.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
-      <Separator layoutX="311.0" orientation="VERTICAL" prefHeight="677.0" prefWidth="9.0" />
-      <Label alignment="CENTER" layoutX="354.0" layoutY="62.0" prefHeight="18.0" prefWidth="39.0" text="Name" textAlignment="CENTER" textFill="WHITE">
+      <Separator layoutX="337.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="744.0" prefWidth="9.0" />
+      <Label alignment="CENTER" layoutX="428.0" layoutY="103.0" prefHeight="19.0" prefWidth="79.0" text="Username" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="355.0" layoutY="116.0" prefHeight="19.0" prefWidth="118.0" text="Date of Birth" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="429.0" layoutY="157.0" prefHeight="19.0" prefWidth="118.0" text="Date of Birth" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <DatePicker id="dob" fx:id="twoDOB" focusTraversable="false" layoutX="590.0" layoutY="112.0" prefHeight="26.0" prefWidth="222.0" stylesheets="@Two_SignUp.css" />
-      <Label alignment="CENTER" layoutX="355.0" layoutY="177.0" prefHeight="19.0" prefWidth="28.0" text="Sex" textAlignment="CENTER" textFill="WHITE">
+      <DatePicker id="dob" fx:id="twoDOB" focusTraversable="false" layoutX="664.0" layoutY="149.0" prefHeight="35.0" prefWidth="222.0" stylesheets="@Two_SignUp.css" />
+      <Label alignment="CENTER" layoutX="429.0" layoutY="218.0" prefHeight="19.0" prefWidth="28.0" text="Sex" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <RadioButton fx:id="userMale" focusTraversable="false" layoutX="732.0" layoutY="178.0" mnemonicParsing="false" styleClass="sex" stylesheets="@Two_SignUp.css" text="Male" textFill="WHITE">
+      <RadioButton fx:id="userMale" focusTraversable="false" layoutX="806.0" layoutY="219.0" mnemonicParsing="false" styleClass="sex" stylesheets="@Two_SignUp.css" text="Male" textFill="WHITE">
          <toggleGroup>
             <ToggleGroup fx:id="userSex" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="userFemale" focusTraversable="false" layoutX="616.0" layoutY="178.0" mnemonicParsing="false" styleClass="sex" stylesheets="@Two_SignUp.css" text="Female" textFill="WHITE" toggleGroup="$userSex" />
-      <Label alignment="CENTER" layoutX="353.0" layoutY="397.0" prefHeight="19.0" prefWidth="158.0" text="Security Question" textAlignment="CENTER" textFill="WHITE">
+      <RadioButton fx:id="userFemale" focusTraversable="false" layoutX="690.0" layoutY="219.0" mnemonicParsing="false" styleClass="sex" stylesheets="@Two_SignUp.css" text="Female" textFill="WHITE" toggleGroup="$userSex" />
+      <Label alignment="CENTER" layoutX="427.0" layoutY="438.0" prefHeight="19.0" prefWidth="158.0" text="Security Question" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="353.0" layoutY="225.0" prefHeight="19.0" prefWidth="49.0" text="Email" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="427.0" layoutY="266.0" prefHeight="19.0" prefWidth="49.0" text="Email" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="352.0" layoutY="278.0" prefHeight="18.0" prefWidth="79.0" text="Password" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="426.0" layoutY="319.0" prefHeight="18.0" prefWidth="79.0" text="Password" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="352.0" layoutY="332.0" prefHeight="26.0" prefWidth="151.0" text="Confirm Password" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="426.0" layoutY="373.0" prefHeight="26.0" prefWidth="151.0" text="Confirm Password" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="twoSubmit" layoutX="558.0" layoutY="550.0" mnemonicParsing="false" onAction="#submitResponse" prefHeight="35.0" prefWidth="280.0" style="-fx-background-radius: 08; -fx-background-color: #A5BA2F; -fx-font-family: monospace; -fx-font-weight: bold; -fx-font-size: 13pt;" styleClass="response_submit" stylesheets="@Two_SignUp.css" text="Submit" textFill="WHITE" />
-      <Button fx:id="twoCancel" layoutX="558.0" layoutY="603.0" mnemonicParsing="false" onAction="#cancelToLandingPage" prefHeight="35.0" prefWidth="280.0" style="-fx-background-radius: 08; -fx-background-color: #E8001A; -fx-font-family: monospace; -fx-font-weight: bold; -fx-font-size: 13pt;" styleClass="response_submit" stylesheets="@Two_SignUp.css" text="Cancel" textFill="WHITE" />
-      <TextField fx:id="twoName" focusTraversable="false" layoutX="590.0" layoutY="57.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: B1D6FF; -fx-background-radius: 04;">
+      <Button fx:id="twoSubmit" layoutX="632.0" layoutY="557.0" mnemonicParsing="false" onAction="#submitResponse" prefHeight="35.0" prefWidth="280.0" style="-fx-background-radius: 08; -fx-background-color: #A5BA2F; -fx-font-family: monospace; -fx-font-weight: bold; -fx-font-size: 13pt;" styleClass="response_submit" stylesheets="@Two_SignUp.css" text="Submit" textFill="WHITE" />
+      <Button fx:id="twoCancel" layoutX="632.0" layoutY="610.0" mnemonicParsing="false" onAction="#cancelToLandingPage" prefHeight="35.0" prefWidth="280.0" style="-fx-background-radius: 08; -fx-background-color: #E8001A; -fx-font-family: monospace; -fx-font-weight: bold; -fx-font-size: 13pt;" styleClass="response_submit" stylesheets="@Two_SignUp.css" text="Cancel" textFill="WHITE" />
+      <TextField fx:id="twoName" focusTraversable="false" layoutX="664.0" layoutY="96.0" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: B1D6FF; -fx-background-radius: 04;">
          <font>
             <Font name="Monospaced Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="twoEmail" focusTraversable="false" layoutX="590.0" layoutY="221.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
+      <TextField fx:id="twoEmail" focusTraversable="false" layoutX="664.0" layoutY="258.0" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="twoPassword" focusTraversable="false" layoutX="590.0" layoutY="274.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
+      <PasswordField fx:id="twoPassword" focusTraversable="false" layoutX="664.0" layoutY="311.0" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font>
       </PasswordField>
-      <PasswordField fx:id="twoConfirmPassword" focusTraversable="false" layoutX="590.0" layoutY="331.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
+      <PasswordField fx:id="twoConfirmPassword" focusTraversable="false" layoutX="664.0" layoutY="369.0" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font>
       </PasswordField>
-      <ComboBox fx:id="twoSecurityQuestion" layoutX="590.0" layoutY="393.0" prefHeight="26.0" prefWidth="222.0" promptText="Select a security question" style="-fx-background-color: B1D6FF;">
+      <ComboBox fx:id="twoSecurityQuestion" layoutX="661.0" layoutY="430.0" prefHeight="35.0" prefWidth="222.0" promptText="Select a security question" style="-fx-background-color: B1D6FF;">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="What's your pet name?" />
@@ -102,64 +109,54 @@
                 
             </items>
       </ComboBox>
-      <TextField fx:id="twoResponse" focusTraversable="false" layoutX="590.0" layoutY="442.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
+      <TextField fx:id="twoResponse" focusTraversable="false" layoutX="664.0" layoutY="480.0" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
          <font>
             <Font name="Monospaced Regular" size="12.0" />
          </font>
       </TextField>
-      <Label alignment="CENTER" layoutX="352.0" layoutY="447.0" prefHeight="18.0" prefWidth="79.0" text="Response" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="426.0" layoutY="488.0" prefHeight="18.0" prefWidth="79.0" text="Response" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Monospaced Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="twoConfirmResponse" focusTraversable="false" layoutX="590.0" layoutY="492.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: B1D6FF;">
-         <font>
-            <Font name="Monospaced Regular" size="12.0" />
-         </font>
-      </TextField>
-      <Label alignment="CENTER" layoutX="352.0" layoutY="497.0" prefHeight="19.0" prefWidth="151.0" text="Confirm Response" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Monospaced Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="nameWarn" layoutX="568.0" layoutY="62.0" text="*" textFill="WHITE">
+      <Label fx:id="nameWarn" layoutX="642.0" layoutY="103.0" text="*" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="sexWarn" layoutX="568.0" layoutY="177.0" text="*" textFill="WHITE">
+      <Label fx:id="emailWarn" layoutX="642.0" layoutY="266.0" text="*" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="emailWarn" layoutX="568.0" layoutY="225.0" text="*" textFill="WHITE">
+      <Label fx:id="passwordWarn" layoutX="642.0" layoutY="319.0" text="*" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="passwordWarn" layoutX="568.0" layoutY="278.0" text="*" textFill="WHITE">
+      <Label fx:id="passwordConfirmWarn" layoutX="642.0" layoutY="376.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="passwordConfirmWarn" layoutX="568.0" layoutY="335.0" textFill="WHITE">
+      <Label fx:id="securityQuestionWarn" layoutX="642.0" layoutY="438.0" text="*" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="securityQuestionWarn" layoutX="568.0" layoutY="397.0" text="*" textFill="WHITE">
+      <Label fx:id="responseWarn" layoutX="642.0" layoutY="488.0" text="*" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="responseWarn" layoutX="568.0" layoutY="447.0" text="*" textFill="WHITE">
+      <Label fx:id="responseConfirmWarn" layoutX="642.0" layoutY="537.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="responseConfirmWarn" layoutX="568.0" layoutY="496.0" textFill="WHITE">
+      <Label fx:id="warn" alignment="CENTER" contentDisplay="CENTER" layoutX="664.0" layoutY="60.0" prefHeight="26.0" prefWidth="222.0" textFill="#ff4343">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font size="16.0" />
          </font>
       </Label>
    </children>

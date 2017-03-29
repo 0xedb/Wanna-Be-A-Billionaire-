@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package youwanttobeabillionaire;
 
 import java.io.IOException;
@@ -44,7 +40,7 @@ import javafx.util.Duration;
  * @author bruno
  */
 public class One_LandingPageController implements Initializable {
-
+    private static String user = null;
     private Statement sqlQuery;
     private Connection dataConnection;
 
@@ -89,12 +85,13 @@ public class One_LandingPageController implements Initializable {
                     + "'" + name + "'" + " AND password='" + password + "')");
             if (output.next()) {
                 if (output.getString("user").equals(name)) {
+                    user = name;
                     popup();
                     Parent questionPage = FXMLLoader.load(getClass().getResource("Threee_QuestionText.fxml"));
                     Scene three = new Scene(questionPage);
                     Stage quest = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     quest.setScene(three);
-                    quest.setTitle("Game on!");
+                    quest.setTitle("Game On!");
                     quest.show();
                 }
 
@@ -109,7 +106,7 @@ public class One_LandingPageController implements Initializable {
     }
 
     @FXML
-    private void adminLogin(ActionEvent event) {
+    private void adminLogin(ActionEvent event) throws IOException {
         oneScreen.setOpacity(0.3);
         onePassword.clear();
         oneName.clear();
@@ -134,11 +131,16 @@ public class One_LandingPageController implements Initializable {
 
         @SuppressWarnings("unchecked")
         Optional<String> result = adminOpen.showAndWait();
-        if (!"".equals(pswd.getText()) && result.isPresent()) {
-            System.out.println(pswd.getText());
+        if ("admin".equals(pswd.getText()) && result.isPresent()) {
             oneScreen.setOpacity(1);
+            Parent signUpPage = FXMLLoader.load(getClass().getResource("adminPage.fxml"));
+            Scene one = new Scene(signUpPage);
+            Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            primaryStage.setScene(one);
+            primaryStage.setTitle("Sign-Up Here");
+            primaryStage.show();
         } else {
-            System.out.println("something went wrong");
+            // password incorrect return to landing page
             oneScreen.setOpacity(1);
         }
     }
@@ -169,5 +171,7 @@ public class One_LandingPageController implements Initializable {
         });
         pTrans.play();
     }
-
+    public static String getUser() {
+        return user;
+    }
 }

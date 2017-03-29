@@ -5,13 +5,7 @@
  */
 package youwanttobeabillionaire;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,21 +19,7 @@ import javafx.stage.Stage;
 public class YouWantToBeABillionaire extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {
-        
-        try {
-            Connection dataConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ywtbab", "root", "root");
-            Statement query = dataConnection.createStatement();
-            
-            ResultSet output = query.executeQuery("select * from user_info");
-            
-            while (output.next()) {
-                System.out.println(output.getString("user"));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(One_LandingPageController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+    public void start(Stage stage) throws IOException  {               
         Parent root = FXMLLoader.load(getClass().getResource("One_LandingPage.fxml"));
         
         Scene scene = new Scene(root);
