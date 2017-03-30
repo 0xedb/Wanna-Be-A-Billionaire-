@@ -47,7 +47,7 @@ public class Threee_QuestionTextController implements Initializable {
     private static int num = 1;
     private static int generated;
     private static int index = 0;
-    private static int databaseSize = 8;    // remember to change size of database
+    private static int databaseSize = 13;    // remember to change size of database
     private static int money = 0;
     private static int ansIndex;
     private static boolean status = true;
@@ -82,6 +82,14 @@ public class Threee_QuestionTextController implements Initializable {
     private ImageView questionImage;
     @FXML
     private Label amount;
+    @FXML
+    private Label A;
+    @FXML
+    private Label B;
+    @FXML
+    private Label C;
+    @FXML
+    private Label D;
 
     /**
      * Initializes the controller class.
@@ -100,7 +108,7 @@ public class Threee_QuestionTextController implements Initializable {
         Alert confirm = new Alert(Alert.AlertType.WARNING);
         confirm.setTitle("Quit");
         confirm.setHeaderText("Remember, quitters never WIN!");
-        confirm.setContentText("You won \t\t $" + money);
+        confirm.setContentText("You won \t\t $" + money + "\n\n\n Becoming a BILLIONAIRE never happens overnight! :)");
         confirm.showAndWait();
 
         Parent landingPage = null;
@@ -111,7 +119,7 @@ public class Threee_QuestionTextController implements Initializable {
         } catch (IOException ex) {
             //exception occured
         }
-        
+
         Scene landing = new Scene(landingPage);
         Stage land = (Stage) ((Node) event.getSource()).getScene().getWindow();
         land.setScene(landing);
@@ -123,13 +131,7 @@ public class Threee_QuestionTextController implements Initializable {
 
     @FXML
     private void sureAnswer(ActionEvent event) {
-        if(!status){
-           responseA.setVisible(false);
-           responseB.setVisible(false);
-           responseC.setVisible(false);
-           responseD.setVisible(false);
-        }
-            
+
         int factor = 5000;
         RadioButton selected = (RadioButton) questionResponse.getSelectedToggle();
         responseA.setDisable(false);
@@ -231,6 +233,18 @@ public class Threee_QuestionTextController implements Initializable {
                 //this should be a popup saying congrats or something like that
                 threeQuestion.setText("Congratulations you've answered all questions!!");    //remember to change to return to homepage not exit
                 status = false;
+                if (!status) {
+                    responseA.setVisible(false);
+                    responseB.setVisible(false);
+                    responseC.setVisible(false);
+                    responseD.setVisible(false);
+                    
+                    A.setVisible(false);
+                    B.setVisible(false);
+                    C.setVisible(false);
+                    D.setVisible(false);
+                    return;
+                }
             }
             Connection dataConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ywtbab", "root", "root");
             Statement query = dataConnection.createStatement();
@@ -276,21 +290,21 @@ public class Threee_QuestionTextController implements Initializable {
             Connection dataConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ywtbab", "root", "root");
             Statement query = dataConnection.createStatement();
             int t = 0;
-    
-            ResultSet output = query.executeQuery("select * from user_info" + " where user = '"+curUser+"'");
-            while (output.next() ) {
+
+            ResultSet output = query.executeQuery("select * from user_info" + " where user = '" + curUser + "'");
+            while (output.next()) {
                 t = output.getInt("money");
                 System.out.println(t < money);
             }
-            
+
             if (t < money) {
                 System.out.println(money);
-                PreparedStatement p =dataConnection.prepareStatement("update user_info set money = " + money + " where user = ?");
+                PreparedStatement p = dataConnection.prepareStatement("update user_info set money = " + money + " where user = ?");
                 p.setString(1, curUser);
                 p.executeUpdate();
             }
-                     
-        } catch(SQLException e) {
+
+        } catch (SQLException e) {
             //database error
         }
     }

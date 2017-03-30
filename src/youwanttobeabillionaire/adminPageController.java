@@ -277,7 +277,6 @@ public class adminPageController implements Initializable {
                 ps.setString(7, secres);
                 ps.setInt(8, m);
                 ps.execute();
-                System.out.println("got here<<<<<<<<<<");
             }           
             
             
@@ -287,7 +286,6 @@ public class adminPageController implements Initializable {
             refresh();
         } catch (SQLException e) {
             //database error
-            e.printStackTrace();
         }
 
     }
