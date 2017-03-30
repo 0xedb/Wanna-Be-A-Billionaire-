@@ -47,9 +47,10 @@ public class Threee_QuestionTextController implements Initializable {
     private static int num = 1;
     private static int generated;
     private static int index = 0;
-    private static int databaseSize = 5;    // remember to change size of database
+    private static int databaseSize = 8;    // remember to change size of database
     private static int money = 0;
     private static int ansIndex;
+    private static boolean status = true;
 
     @FXML
     private Button threeWalkAway;
@@ -99,8 +100,7 @@ public class Threee_QuestionTextController implements Initializable {
         Alert confirm = new Alert(Alert.AlertType.WARNING);
         confirm.setTitle("Quit");
         confirm.setHeaderText("Remember, quitters never WIN!");
-        //show how much you've got so far
-        confirm.setContentText("");
+        confirm.setContentText("You won \t\t $" + money);
         confirm.showAndWait();
 
         Parent landingPage = null;
@@ -111,6 +111,7 @@ public class Threee_QuestionTextController implements Initializable {
         } catch (IOException ex) {
             //exception occured
         }
+        
         Scene landing = new Scene(landingPage);
         Stage land = (Stage) ((Node) event.getSource()).getScene().getWindow();
         land.setScene(landing);
@@ -122,6 +123,13 @@ public class Threee_QuestionTextController implements Initializable {
 
     @FXML
     private void sureAnswer(ActionEvent event) {
+        if(!status){
+           responseA.setVisible(false);
+           responseB.setVisible(false);
+           responseC.setVisible(false);
+           responseD.setVisible(false);
+        }
+            
         int factor = 5000;
         RadioButton selected = (RadioButton) questionResponse.getSelectedToggle();
         responseA.setDisable(false);
@@ -221,8 +229,8 @@ public class Threee_QuestionTextController implements Initializable {
         try {
             if (index == databaseSize) {
                 //this should be a popup saying congrats or something like that
-                threeQuestion.setText("QUESTIONS EXHAUSTED!!");    //remember to change to return to homepage not exit
-                return;
+                threeQuestion.setText("Congratulations you've answered all questions!!");    //remember to change to return to homepage not exit
+                status = false;
             }
             Connection dataConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ywtbab", "root", "root");
             Statement query = dataConnection.createStatement();
