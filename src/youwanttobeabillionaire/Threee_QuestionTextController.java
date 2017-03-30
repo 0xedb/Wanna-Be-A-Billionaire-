@@ -127,6 +127,7 @@ public class Threee_QuestionTextController implements Initializable {
         land.show();
         threeScreen.setOpacity(1);
         prepare();
+        money = 0;
     }
 
     @FXML
